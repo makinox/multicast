@@ -1,0 +1,9 @@
+.section1-signin-form {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+input {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
