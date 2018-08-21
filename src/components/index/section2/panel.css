@@ -1,0 +1,27 @@
+/* .div-panel {
+    overflow: 'auto';
+    height: '500px'
+} */
+
+.div-card {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dbdbdb;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin: 20px 0 20px 0;
+}
+
+.div-card-header {
+    background-color: #F7F7F7;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-color: #dbdbdb;
+    border-radius: 5px;
+    padding: 5px 0px 0px 10px;
+}
+
+.div-card-body {
+    margin: 5px 10px 0 10px;
+}
