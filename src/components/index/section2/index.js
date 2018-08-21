@@ -18,7 +18,8 @@ export default class App extends Component {
     }
 
     componentDidUpdate(prev, act) {
-        if (prev !== act){
+        if (this.state.info[this.state.info.length - 1] === act.info[act.info.length - 1]){
+            console.log('entra')
             this.state.socket.on('conf:message', (data) => {
                 this.setState({ info: [...this.state.info, data]})
             })
