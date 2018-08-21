@@ -3,28 +3,35 @@ import Form from './form'
 import Container from './container'
 import Panel from './panel'
 import {info} from './../../../db.json'
+import io from 'socket.io-client';
 
 export default class App extends Component {
 
     state = {
-        info: info
+        info: info,
+        socket: null
     }
 
     componentDidMount() {
-        console.log(this.state.info)   
+        const socket = io('http://localhost:3000')
+        this.setState({socket})
     }
 
-    componentDidUpdate() {
-        console.log(this.state.info)
+    componentDidUpdate(prev, act) {
+        if (prev !== act){
+            this.state.socket.on('conf:message', (data) => {
+                this.setState({ info: [...this.state.info, data]})
+            })
+        }
     }
 
     handleSub = (e) => {
         e.preventDefault()
-        let obj = {
+        const {socket} = this.state
+        socket.emit('conf:message', {
             author: 'andre',
             text: e.target.mensaje.value
-        }
-        this.setState({ info: [...this.state.info, obj]})
+        })
     }
 
     render() {
