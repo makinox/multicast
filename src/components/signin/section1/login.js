@@ -13,12 +13,8 @@ export default (props) => (
                             <h3 className="pt-2 pb-2">Iniciar sesión</h3>
                         </div>
                         <div className="col col-9 pb-5">
-                            <label htmlFor="usuario" className="form-group">Ingresa con tu usuario o correo</label>
+                            <label htmlFor="usuario" className="form-group">Ingresa tu usuario</label>
                             <input name="user" onChange={props.handleInput} type="text" className="form-control" id="usuario" placeholder="Ingresa tu usuario"/>
-                        </div>
-                        <div className="col col-9 pb-5">
-                            <label htmlFor="pass" className="form-group">Ingresa tu contraseña</label>
-                            <input name="pass" onChange={props.handleInput} type="password" className="form-control" id="pass" placeholder="**********"/>
                         </div>
                         <button type="submit" className="btn btn-info mb-5">Enviar</button>
                     </form>
