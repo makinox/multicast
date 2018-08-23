@@ -13,25 +13,24 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        const socket = io('http://localhost:3000')
-        this.setState({socket})
-        
-        socket.on('push:connection', info => {console.log(info);this.setState({info})})
+        const socket = io('http://192.168.0.31:3000')
+        this.setState({ socket })
+
+        socket.on('push:connection', info => { console.log(info); this.setState({ info }) })
     }
 
     componentDidUpdate(prev, act) {
-        if (this.state.info[this.state.info.length - 1] === act.info[act.info.length - 1]){
+        if (this.state.info[this.state.info.length - 1] === act.info[act.info.length - 1]) {
             console.log('entra')
             this.state.socket.on('push:message', (data) => {
-                this.setState({ info: [...this.state.info, data]})
+                this.setState({ info: [...this.state.info, data] })
             })
         }
     }
 
     handleSub = (e) => {
         e.preventDefault()
-        const {socket} = this.state
-        socket.emit('push:message', {
+        this.state.socket.emit('push:message', {
             author: 'andre',
             text: e.target.mensaje.value
         })
@@ -41,8 +40,8 @@ export default class App extends Component {
         return (
             <section>
                 <Container>
-                    <Form handleSubmit={this.handleSub}/>
-                    <Panel stade={this.state.info}/>
+                    <Form handleSubmit={this.handleSub} />
+                    <Panel stade={this.state.info} />
                 </Container>
             </section>
         )
