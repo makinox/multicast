@@ -15,7 +15,7 @@ export default class App extends Component {
         e.preventDefault()
         this.setState({ 'user': e.target['user'].value })
 
-        const socket = io('http://192.168.0.31:3000')
+        const socket = io('https://socket-server-js.herokuapp.com/')
         this.setState({socket})
         socket.emit('push:login', { 'name': e.target['user'].value})
 
