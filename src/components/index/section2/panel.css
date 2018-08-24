@@ -5,12 +5,19 @@
 
 .div-card {
     border-width: 1px;
+    width: 100%;
+    height: 13%;
     border-style: solid;
     border-color: #dbdbdb;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
     margin: 20px 0 20px 0;
+    align-items: center;
+    justify-content: center;
+    animation-name: message;
+    animation-duration: 0.4s;
+    animation-direction: reverse;
 }
 
 .div-card-header {
@@ -24,4 +31,20 @@
 
 .div-card-body {
     margin: 5px 10px 0 10px;
+}
+
+@keyframes message {
+    0% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    80% {
+        
+    }
+
+    100% {
+        opacity: 0;
+        height: 0%;
+    }
 }

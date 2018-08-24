@@ -13,7 +13,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        const socket = io('http://192.168.0.31:3000')
+        const socket = io('https://socket-server-js.herokuapp.com/')
         this.setState({ socket })
 
         socket.on('push:connection', info => {this.setState({ info }) })

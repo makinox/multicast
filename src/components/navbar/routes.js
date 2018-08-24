@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Indes from './../index/index'
 import NoLogin from './../noLogin/index'
 import Signin from './../signin/index'
+import Animation from './../animation/index'
 
 export default (props) => (
     <Router>
@@ -13,6 +14,7 @@ export default (props) => (
                 props.logged ? (
                     <div>
                         <Route exact path="/" component={Indes} />
+                        <Route exact path="/animation" component={Animation} />
                     </div>
                 )
                     :
