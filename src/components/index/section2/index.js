@@ -16,12 +16,11 @@ export default class App extends Component {
         const socket = io('http://192.168.0.31:3000')
         this.setState({ socket })
 
-        socket.on('push:connection', info => { console.log(info); this.setState({ info }) })
+        socket.on('push:connection', info => {this.setState({ info }) })
     }
 
     componentDidUpdate(prev, act) {
         if (this.state.info[this.state.info.length - 1] === act.info[act.info.length - 1]) {
-            console.log('entra')
             this.state.socket.on('push:message', (data) => {
                 this.setState({ info: [...this.state.info, data] })
             })
@@ -31,7 +30,7 @@ export default class App extends Component {
     handleSub = (e) => {
         e.preventDefault()
         this.state.socket.emit('push:message', {
-            author: 'andre',
+            author: localStorage.getItem('name'),
             text: e.target.mensaje.value
         })
     }

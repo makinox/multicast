@@ -2,7 +2,7 @@ import React from 'react'
 import './panel.css'
 
 export default (props) => (
-    <div className="col col-3" style={{overflow: 'auto', height: '530px'}}>
+    <div className="col col-12 col-md-3" style={{overflow: 'auto', height: '530px'}}>
         {
             props.stade.map((info, i) => {
                 return (

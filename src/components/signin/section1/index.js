@@ -19,13 +19,14 @@ export default class App extends Component {
         this.setState({socket})
         socket.emit('push:login', { 'name': e.target['user'].value})
 
+        let user = e.target['user'].value
         socket.on('push:validate', (data) => {
             let validate = data
             if (validate < 8) {
                 localStorage.setItem('logged', true)
+                localStorage.setItem('name', user)
                 this.setState({ loggedIn: true })
                 window.location.reload()
-                console.log('validado')
             }
         })
     }
