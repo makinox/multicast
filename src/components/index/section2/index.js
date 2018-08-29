@@ -33,6 +33,7 @@ export default class App extends Component {
             author: localStorage.getItem('name'),
             text: e.target.mensaje.value
         })
+        e.target.mensaje.value = ''
     }
 
     render() {

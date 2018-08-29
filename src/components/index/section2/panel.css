@@ -6,7 +6,7 @@
 .div-card {
     border-width: 1px;
     width: 100%;
-    height: 13%;
+    height: max-content;
     border-style: solid;
     border-color: #dbdbdb;
     background-color: #fff;
